@@ -1,4 +1,5 @@
 #lang racket
+(require racket/trace)
 
 (define (my-filter pred seq)
   (cond
@@ -7,5 +8,6 @@
 							(my-filter pred (cdr seq)))]
 	[else (my-filter pred (cdr seq))]))
 
-(displayln (filter odd? (list 1 2 3 4 5)))
+(trace my-filter)
+(displayln (my-filter odd? (list 1 2 3 4 5)))
 

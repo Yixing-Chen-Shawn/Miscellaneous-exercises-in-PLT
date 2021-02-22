@@ -18,6 +18,7 @@
 	[else (append (enumerate-tree (car tree)) ;; use append to only keep one single bracket at the end.
 				  (enumerate-tree (cdr tree)))]))
 
+(define tree-1 (list 1 (list 2 (list 3 4)) 5))
 (trace enumerate-tree)
-(enumerate-tree (list 1 (list 2 (list 3 4)) 5))
+(enumerate-tree tree-1)
 
